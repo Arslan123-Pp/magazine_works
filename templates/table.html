@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Оформление каюты</h2>
+    <table>
+    <tr bgcolor="lightgray">
+      <th width="4000">Цвет стен</th>
+      <th>Эмблема</th>
+    </tr>
+    <tr>
+        <td class="hsl-color"></td>
+        {% if age < 21 %}
+            <td><img src="/static/img/marsn1.png"></td>
+        {% else %}
+            <td><img src="/static/img/marsn2.jpeg"></td>
+        {% endif %}
+    </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Work log</h2>
+    {% for item in jobs%}
+        {% for us in users%}
+            {% if us.id == item.team_leader %}
+                <h2>Action # {{item.id}}</h2>
+        <table>
+            <tr bgcolor="lightgray">
+                <th width="2000">Title of activity</th>
+                <th width="500">Team leader</th>
+                <th width="500">Duration</th>
+                <th width="1000">List of collaborators</th>
+                <th width="500">Is finished</th>
+            </tr>
+            <tr>
+                <th width="2000" bgcolor="#d5b3f5">{{item.job}}</th>
+                <th width="500" bgcolor="#d5b3f5">{{us.surname}} {{us.name}}</th>
+                <th width="500" bgcolor="#d5b3f5">{{item.work_size}} hours</th>
+                <th width="1000" bgcolor="#d5b3f5">{{item.collaborators}}</th>
+                <th width="500" bgcolor="#f7ebf7">{{item.is_finished}}</th>
+            </tr>
+        </table>
+            {% endif %}
+        {% endfor %}
+
+    {% endfor %}
+{% endblock %}
